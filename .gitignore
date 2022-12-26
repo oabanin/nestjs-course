@@ -6,6 +6,8 @@
 /mongo-data-4.4/
 .vscode
 .clinic
+.vscode/
+/.vscode
 
 # Logs
 logs
