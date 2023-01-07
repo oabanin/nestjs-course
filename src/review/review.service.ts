@@ -5,9 +5,9 @@ import { CreateReviewDto } from './dto/create-review.dto';
 import { Types } from 'mongoose';
 import { InjectModel } from 'nestjs-typegoose';
 
-class Leak {}
+// class Leak {}
 
-const leaks = [];
+// const leaks = [];
 
 @Injectable()
 export class ReviewService {
@@ -27,7 +27,7 @@ export class ReviewService {
   async findByProductId(
     productId: string,
   ): Promise<DocumentType<ReviewModel>[]> {
-    leaks.push(new Leak());
+    // leaks.push(new Leak());  example of memory leaks
     return this.reviewModel
       .find({ productId: new Types.ObjectId(productId) })
       .exec();
