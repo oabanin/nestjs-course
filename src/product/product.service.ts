@@ -46,6 +46,16 @@ export class ProductService {
                         },
                         reviewAvg: {
                             $avg: '$reviewsField.rating'
+                        },
+                        reviewsField:{
+                            $function:{
+                                body:`function (reviewsField){
+                                    reviewsField.sort((a, b)=> new Date(b.createdAt) - new Date(a.createdAt));
+                                    return reviewsField;
+                                }`,
+                                args:['$reviewsField'],
+                                lang:'js'
+                            }
                         }
                     }
                 }
