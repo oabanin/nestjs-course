@@ -1,0 +1,4 @@
+docker build -t top-api .
+docker-compose up -d
+docker ps
+docker images
