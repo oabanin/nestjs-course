@@ -12,8 +12,12 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-          registry: docker.pkg.github.com
-          name: docker.pkg.github.com/oabanin/nestjs-course/nestjs-course-container
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+#          registry: docker.pkg.github.com
+#          name: docker.pkg.github.com/oabanin/nestjs-course/nestjs-course-container
+#          username: ${{ secrets.DOCKER_USERNAME }}
+#          password: ${{ secrets.DOCKER_PASSWORD }}
+          name: oabanin/nestjs-course/nestjs-course-container
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ghcr.io
           tags: "develop"
