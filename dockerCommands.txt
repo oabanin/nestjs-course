@@ -1,4 +1,6 @@
 docker build -t top-api .
-docker-compose up -d
+
 docker ps
 docker images
+
+docker-compose up -d   is the same as docker run
