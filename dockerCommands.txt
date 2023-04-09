@@ -4,5 +4,3 @@ docker ps
 docker images
 
 docker-compose up -d   is the same as docker run
-
-fix
