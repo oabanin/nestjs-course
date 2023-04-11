@@ -8,6 +8,7 @@
 .clinic
 .vscode/
 /.vscode
+/uploads
 
 # Logs
 logs
