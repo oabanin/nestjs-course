@@ -46,7 +46,8 @@
     "rimraf": "^3.0.2",
     "rxjs": "^7.5.2",
     "telegraf": "^4.3.0",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "sharp": "^0.32.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.2.0",
