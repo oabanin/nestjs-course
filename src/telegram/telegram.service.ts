@@ -1,20 +1,19 @@
-import {Injectable} from '@nestjs/common';
+import {Inject, Injectable} from '@nestjs/common';
 import {Telegraf} from "telegraf";
 import {ITelegramOptions} from "./telegram.interface";
-import {getTelegramConfig} from "../../configs/telegram.config";
-import {th} from "date-fns/locale";
+import {TELEGRAM_MODULE_OPTIONS} from "./telegram.constants";
 
 @Injectable()
 export class TelegramService {
     bot: Telegraf;
     options: ITelegramOptions;
 
-    constructor() {
-        this.options = getTelegramConfig();
-        this.bot = new Telegraf(this.options.token);
+    constructor(@Inject(TELEGRAM_MODULE_OPTIONS) options: ITelegramOptions) {
+        this.bot = new Telegraf(options.token);
+        this.options = options;
     }
 
-    async sendMessage(message: string, chatId: string = this.options.chatId) {
-         await this.bot.telegram.sendMessage(chatId,message);
+    async sendMessage(message: string, chatId: string = this.options.chatId) {gi
+        await this.bot.telegram.sendMessage(chatId, message);
     }
 }
