@@ -16,7 +16,6 @@ export class HhService {
 
     async getData(text: string) {
         try {
-            console.log('asdasd');
             const observable = this.httpService.get<HhResponse>(API_URL.vacancies,
                 {
                     params: {
@@ -31,7 +30,6 @@ export class HhService {
             const {data} = await lastValueFrom(observable);
             return this.parseData(data);
         } catch (e) {
-            console.log('sda');
             Logger.error(e);
         }
 
