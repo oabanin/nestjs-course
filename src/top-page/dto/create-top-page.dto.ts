@@ -36,7 +36,7 @@ class hhDataDto {
     seniorSalary: number;
 
     @IsDate()
-    updatedAt: number;
+    updatedAt: Date;
 }
 
 
